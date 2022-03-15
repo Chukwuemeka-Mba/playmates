@@ -27,4 +27,4 @@ Repository
 
 ## If you would like to work on the project with me. 
 Feel free to send an email @emekamba10@gmail.com
-or Twitter <a href="https://twitter.com/@reallifenero">reallifenero</a> 
+or Twitter: <a href="https://twitter.com/@reallifenero">@reallifenero</a> 
