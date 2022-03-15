@@ -1,6 +1,6 @@
 # Playmates
 
-### Your casual dating experiances, all in one place.
+### Your dating experiances, all in one place.
 
 Think of it as a combination of Notion and Tinder.
 
