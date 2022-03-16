@@ -1,11 +1,12 @@
 # Playmates
 
-### Your dating experiances, all in one place.
+### Your dating experiences, all in one place.
 
 Think of it as a combination of Notion and Tinder.
 
 
-
+This project is an ongoing one. Though the main features have been fleshed out, 
+I believe it has market potential, hence I am going to keep building till I get users.
 
 ## Project Structure:
 
