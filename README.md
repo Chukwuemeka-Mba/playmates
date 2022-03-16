@@ -1,10 +1,5 @@
 # Playmates
 
-### Your dating experiences, all in one place.
-
-Think of it as a combination of Notion and Tinder.
-
-
 
 #### The Idea:
 
