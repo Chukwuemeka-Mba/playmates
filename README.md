@@ -3,7 +3,7 @@
 
 #### The Idea:
 
-I noticed my friends liked keeping track of who they've been with in the past. Or currently. So I decided to build something that helps. Hopefully I'd get them to stop using google docs.
+I noticed my friends liked keeping track of who they've dated in the past, or are currently dating. So I decided to build something that helps solve the problem. The goal is to get them to stop using google docs.
 
 ### NB:
 This project is an ongoing one. Though the main features have been fleshed out, 
