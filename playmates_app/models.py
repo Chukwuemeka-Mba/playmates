@@ -10,6 +10,7 @@ class Playmate(models.Model):
     description = models.TextField(default="One night stand, gangbag, both?")
     slug = models.SlugField()
     play_count = models.IntegerField()
+    image = models.ImageField(upload_to='uploads/', blank=True, null=True)
     rating = models.IntegerField()
     author = models.ForeignKey(settings.AUTH_USER_MODEL, 
                                 on_delete=models.CASCADE,
@@ -17,3 +18,8 @@ class Playmate(models.Model):
                                 )
     def __str__(self):
         return self.name
+    
+    def get_image(self):
+        if self.image:
+            return self.image.url
+        return ''

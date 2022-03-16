@@ -2,7 +2,7 @@
   <div>
     <nav>
       <div>
-        <h1>Playmates</h1>
+        <router-link to="/"><h1>Playmates</h1></router-link>
       </div>
       <div class="links">
         <router-link to="/">Home</router-link>

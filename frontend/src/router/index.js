@@ -1,11 +1,18 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import PlaymateDetail from "../views/PlaymateDetail.vue";
 
 const routes = [
   {
     path: "/",
     name: "home",
     component: HomeView,
+  },
+  {
+    path: "/playmate",
+    name: "playmate",
+    component: PlaymateDetail,
+    props: true,
   },
   {
     path: "/archives",

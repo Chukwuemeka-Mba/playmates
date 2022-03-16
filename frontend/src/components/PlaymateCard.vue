@@ -1,28 +1,37 @@
 <template lang="">
   <div class="playmate">
     <div class="card">
-      <div class="card-text">
-        <h1>Playmate</h1>
-        <p>What went down?</p>
-        <p>Date | Location</p>
+      <div class="card-img">
+        <img :src="playmate.image" alt="" />
       </div>
-      <div class="card-img"></div>
+      <div class="card-text">
+        <h1>{{ playmate.name }}</h1>
+        <p>{{ playmate.description }}</p>
+        <p>{{ playmate.age }} years | {{ playmate.rating }} stars</p>
+      </div>
     </div>
   </div>
 </template>
 <script>
 export default {
   name: "PlaymateCard",
+  props: {
+    playmate: {
+      type: Object,
+      default: () => {},
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
 .card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   background-color: white;
   border-radius: 5px;
   width: 100%;
+  max-width: 250px;
   box-shadow: 0px 5px 10px gray;
 }
 
@@ -36,9 +45,18 @@ export default {
 .card-img {
   display: flex;
   flex-direction: column;
-  background-image: url("../assets/datingimg.jpeg");
   background-position: center;
-  min-width: 25em;
-  border-radius: 5px;
+  height: 20em;
+}
+
+.card-img img {
+  height: 100%;
+}
+
+.playmate {
+  display: grid;
+  margin: 20px 0px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
 }
 </style>

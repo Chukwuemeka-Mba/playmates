@@ -1,13 +1,14 @@
+from argparse import Action
 from django import views
 from django.shortcuts import render
 from rest_framework import viewsets
-
+from rest_framework.decorators import action
 from playmates_app.permissions import IsAuthor
 from .serializers import PlayMateSerializer
 from .models import Playmate
 from rest_framework.permissions import IsAuthenticated
 # from .permissions import IsAuthor
-# Create your views here.
+
 
 class PlayMates(viewsets.ModelViewSet):
     serializer_class = PlayMateSerializer

@@ -4,8 +4,13 @@
       <h1>All archives</h1>
       <h2>Body Count: {{ bodyCount }}</h2>
     </div>
-    <div class="cards" :v-for="playmate in playmates">
-      <playmate-card :playmate="playmate"></playmate-card>
+    <div class="cards">
+      <playmate-card
+        v-for="playmate in playmates"
+        :key="playmate.id"
+        :playmate="playmate"
+        @click="getPlaymateDetail(playmate.id)"
+      ></playmate-card>
     </div>
   </div>
 </template>
@@ -34,12 +39,14 @@ export default {
     getPlaymates() {
       axios.get("playmates-api/playmates/").then((response) => {
         this.playmates = response.data;
-        console.log(this.playmates[0]);
+        this.bodyCount = this.playmates.length;
       });
     },
-    getBodyCount() {
-      this.bodyCount = this.playmates.length;
-      console.log(this.bodyCount);
+    getPlaymateDetail(num) {
+      this.$router.push({
+        name: "playmate",
+        prams: { playmateId: num },
+      });
     },
   },
 };
@@ -63,8 +70,8 @@ export default {
   }
 }
 .cards {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2em;
 }
 </style>
