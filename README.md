@@ -5,6 +5,12 @@
 Think of it as a combination of Notion and Tinder.
 
 
+
+#### The Idea:
+
+I noticed my friends liked keeping track of who they've been with in the past. Or currently. So I decided to build something that helps. Hopefully I'd get them to stop using google docs.
+
+### NB:
 This project is an ongoing one. Though the main features have been fleshed out, 
 I believe it has market potential, hence I am going to keep building till I get users.
 
