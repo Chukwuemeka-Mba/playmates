@@ -23,12 +23,6 @@
 import axios from "axios";
 export default {
   name: "PlaymateDetail",
-  props: {
-    playmateId: {
-      type: String,
-      required: true,
-    },
-  },
   data() {
     return {
       playmate: {},

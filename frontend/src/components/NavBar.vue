@@ -4,10 +4,13 @@
       <div>
         <router-link to="/"><h1>Playmates</h1></router-link>
       </div>
+      <div class="searchbar">
+        <input type="search" name="searchbar" value="looking for something?" />
+      </div>
       <div class="links">
         <router-link to="/" class="">Home</router-link>
         <router-link to="/favorites" class="">Favorites</router-link>
-        <router-link to="/archives" class="">Recents</router-link>
+        <router-link to="/archives" class="">Archives</router-link>
         <router-link to="/account">
           <div class="account-icon">
             <img src="../assets/playboy.jpeg" alt="" />
@@ -62,10 +65,27 @@ nav {
   border-radius: 10px;
 }
 
-img {
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
+.account-icon img {
+  width: 45px;
+  height: 45px;
+  border-radius: 20px;
   border: 1px solid #9e9e9e;
+}
+
+.searchbar input {
+  width: 400px;
+  height: 40px;
+  border-radius: 30px;
+  padding: 15px 20px;
+  border: 0.5px solid #ff5a60;
+}
+input:hover {
+  border: 0.5px solid #11366e;
+}
+
+@media screen and(max-width: 720px) {
+  input {
+    display: none;
+  }
 }
 </style>
