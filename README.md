@@ -27,6 +27,8 @@ Repository
 - ``` cd frontend``` 
 - ``` npm run serve ```
 
+### <a href="https://www.figma.com/file/l9Y9Cal47HB0ygau9fufyL/Playmates-App?node-id=0%3A1"><img src="https://cdn.sanity.io/images/599r6htc/localized/46a76c802176eb17b04e12108de7e7e0f3736dc6-1024x1024.png?w=670&h=670&q=75&fit=max&auto=format" width="40" height="40" />View Figma Design </a> 
+
 ## If you would like to work on the project with me. 
 Feel free to send an email @emekamba10@gmail.com
 or Twitter: <a href="https://twitter.com/@reallifenero">@reallifenero</a> 
