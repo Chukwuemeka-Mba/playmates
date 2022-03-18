@@ -5,9 +5,14 @@
         <router-link to="/"><h1>Playmates</h1></router-link>
       </div>
       <div class="links">
-        <router-link to="/">Home</router-link>
-        <router-link to="/archives" class="archives">Archives</router-link>
-        <router-link to=""></router-link>
+        <router-link to="/" class="">Home</router-link>
+        <router-link to="/favorites" class="">Favorites</router-link>
+        <router-link to="/archives" class="">Recents</router-link>
+        <router-link to="/account">
+          <div class="account-icon">
+            <img src="../assets/playboy.jpeg" alt="" />
+          </div>
+        </router-link>
       </div>
     </nav>
   </div>
@@ -18,6 +23,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 nav {
   display: flex;
   flex-direction: row;
@@ -25,6 +31,10 @@ nav {
   align-items: center;
   padding: 0px 20px;
   max-height: 90px;
+  background-color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 1px 2px 3px #e5e5e5;
+  border-radius: 25px;
   a,
   h1 {
     color: #ff5a60;
@@ -39,6 +49,9 @@ nav {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    a:hover {
+      text-decoration: underline 1px #ff5a60;
+    }
   }
 }
 
@@ -50,8 +63,9 @@ nav {
 }
 
 img {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-radius: 100%;
+  border: 1px solid #9e9e9e;
 }
 </style>

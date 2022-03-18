@@ -2,14 +2,13 @@
   <div class="archives">
     <div class="title">
       <h1>All archives</h1>
-      <h2>Body Count: {{ bodyCount }}</h2>
+      <h2>Play Count: {{ bodyCount }}</h2>
     </div>
     <div class="cards">
       <playmate-card
         v-for="playmate in playmates"
         :key="playmate.id"
         :playmate="playmate"
-        @click="getPlaymateDetail(playmate.id)"
       ></playmate-card>
     </div>
   </div>
@@ -45,7 +44,7 @@ export default {
     getPlaymateDetail(num) {
       this.$router.push({
         name: "playmate",
-        prams: { playmateId: num },
+        params: { playmateId: num },
       });
     },
   },
@@ -53,25 +52,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 .archives {
-  background-color: white;
+  font-family: "Roboto", "sans-serif";
+}
+.title {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  justify-content: space-between;
+  margin: 10px 30px;
   font-size: 10px;
-  height: 100vh;
-  .title {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 300px;
-  }
+  font-weight: normal;
 }
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 2em;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+@media (min-width: 20em) and (max-width: 35em) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 </style>

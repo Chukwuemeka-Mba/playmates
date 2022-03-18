@@ -4,7 +4,6 @@
       <div class="support card">
         <h1>Support</h1>
         <div class="links">
-          <router-link to="">Help Center</router-link>
           <router-link to="">Sefety Information</router-link>
           <router-link to="">Mental Health Support</router-link>
           <router-link to="">COVID-19</router-link>
@@ -20,8 +19,6 @@
       <div class="About card">
         <h1>About</h1>
         <div class="links">
-          <router-link to="">Newsroom</router-link>
-          <router-link to="">Learn about new Features</router-link>
           <router-link to="">Founders</router-link>
           <router-link to="">Investors</router-link>
           <router-link to="">Join the team</router-link>
@@ -41,8 +38,7 @@ footer {
   bottom: 0px;
   display: flex;
   flex-direction: row;
-  gap: 20px;
-  justify-content: center;
+  justify-content: space-around;
   text-align: start;
   background-color: #000000;
   color: #ffffff;
@@ -60,6 +56,10 @@ footer {
     text-decoration: none;
     color: #ffffff;
     padding: 4px 5px;
+  }
+  a:hover {
+    // text-decoration: underline 1px #ffffff;
+    color: #ff5a60;
   }
 }
 </style>

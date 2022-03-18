@@ -9,7 +9,7 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/playmate",
+    path: "/playmate/:id",
     name: "playmate",
     component: PlaymateDetail,
     props: true,
