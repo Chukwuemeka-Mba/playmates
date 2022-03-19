@@ -27,7 +27,7 @@
         </div>
       </form>
       <div class="data">
-        <router-link to="/login"> <p>Don't have an account?</p></router-link>
+        <router-link to="/signup"> <p>Don't have an account?</p></router-link>
       </div>
     </div>
   </div>
@@ -66,7 +66,7 @@ export default {
           axios.defaults.headers.common["Authorization"] = "Token" + token;
           localStorage.setItem("token", token);
 
-          this.$router.push("/home");
+          this.$router.push("/archives");
           return response;
         })
         .catch((error) => {

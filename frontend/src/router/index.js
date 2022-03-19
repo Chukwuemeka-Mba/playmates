@@ -3,6 +3,7 @@ import TheHome from "../views/TheHome.vue";
 import ThePlaymate from "../views/ThePlaymate.vue";
 import TheSignup from "../views/TheSignup.vue";
 import TheLogin from "../views/TheLogin.vue";
+import TheAccount from "../views/TheAccount.vue";
 
 const routes = [
   {
@@ -26,11 +27,13 @@ const routes = [
     component: TheLogin,
   },
   {
+    path: "/account",
+    name: "account",
+    component: TheAccount,
+  },
+  {
     path: "/archives",
     name: "archives",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/TheArchives.vue"),
   },

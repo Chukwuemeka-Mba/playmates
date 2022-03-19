@@ -1,20 +1,20 @@
 <template lang="">
   <div>
     <nav>
-      <div>
-        <router-link to="/"><h1>Playmates</h1></router-link>
+      <div class="logo">
+        <router-link to="/">
+          <img src="../assets/p.svg" alt="logo" width="40" height="40" />
+          <h1></h1
+        ></router-link>
       </div>
       <div class="searchbar">
         <input type="search" name="searchbar" value="looking for something?" />
       </div>
       <div class="links" v-if="$store.state.isAuthenticated">
-        <router-link to="/" class="">Home</router-link>
         <router-link to="/favorites" class="">Favorites </router-link>
         <router-link to="/archives" class=""> Archives</router-link>
         <router-link to="/account">
-          <div class="account-icon">
-            <img src="../assets/playboy.jpeg" alt="" />
-          </div>
+          <p>User: Logged in</p>
         </router-link>
       </div>
     </nav>
@@ -32,12 +32,11 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 20px;
+  padding: 10px 20px;
   max-height: 90px;
-  background-color: #ffffff;
+  background-color: #000000;
   font-family: "Roboto", sans-serif;
   box-shadow: 1px 2px 13px #868686;
-  border-radius: 25px;
   a,
   h1 {
     color: #ff5a60;
@@ -105,5 +104,11 @@ input:hover {
 nav svg {
   height: 30px;
   margin: 0px 10px;
+}
+
+.logo a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 </style>
