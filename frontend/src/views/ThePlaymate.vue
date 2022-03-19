@@ -38,6 +38,7 @@ export default {
         .get(`http://localhost:8000/playmates-api/playmates/${id}/`)
         .then((response) => {
           this.playmate = response.data;
+          document.title = this.playmate.name + " | Playmates";
         })
         .catch((error) => {
           console.log(error);

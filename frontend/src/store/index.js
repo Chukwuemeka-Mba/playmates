@@ -6,14 +6,22 @@ export default createStore({
       items: [],
     },
     isAuthenticated: false,
+    token: "",
   },
   getters: {},
   mutations: {
-    initializeFavorites(state) {
+    initializeStore(state) {
       if (localStorage.getItem("favorites")) {
         state.favorites = JSON.parse(localStorage.getItem("favorites"));
       } else {
         localStorage.setItem("favorites", JSON.stringify(state.cart));
+      }
+      if (localStorage.getItem("token")) {
+        state.token = localStorage.getItem("token");
+        state.isAuthenticated = true;
+      } else {
+        state.token = "";
+        state.isAuthenticated = false;
       }
     },
     addToFavorites(state, item) {
@@ -28,6 +36,14 @@ export default createStore({
         state.favorites.items.push(item);
       }
       localStorage.setItem("favorites", JSON.stringify(state.favorites));
+    },
+    setToken(state, token) {
+      state.token = token;
+      state.isAuthenticated = true;
+    },
+    removeToken(state) {
+      state.token = "";
+      state.isAuthenticated = false;
     },
   },
   actions: {},

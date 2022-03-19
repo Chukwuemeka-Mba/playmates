@@ -7,10 +7,10 @@
       <div class="searchbar">
         <input type="search" name="searchbar" value="looking for something?" />
       </div>
-      <div class="links">
+      <div class="links" v-if="$store.state.isAuthenticated">
         <router-link to="/" class="">Home</router-link>
-        <router-link to="/favorites" class="">Favorites</router-link>
-        <router-link to="/archives" class="">Archives</router-link>
+        <router-link to="/favorites" class="">Favorites </router-link>
+        <router-link to="/archives" class=""> Archives</router-link>
         <router-link to="/account">
           <div class="account-icon">
             <img src="../assets/playboy.jpeg" alt="" />
@@ -22,7 +22,7 @@
 </template>
 <script>
 export default {
-  name: "NavBar",
+  name: "TheNav",
 };
 </script>
 <style lang="scss" scoped>
@@ -36,7 +36,7 @@ nav {
   max-height: 90px;
   background-color: #ffffff;
   font-family: "Roboto", sans-serif;
-  box-shadow: 1px 2px 3px #e5e5e5;
+  box-shadow: 1px 2px 13px #868686;
   border-radius: 25px;
   a,
   h1 {
@@ -55,6 +55,14 @@ nav {
     a:hover {
       text-decoration: underline 1px #ff5a60;
     }
+
+    // //* Hamburger Style:
+    // @media screen and (max-width: 700px) {
+    //   display: none;
+    // }
+    label {
+      color: #ff5a60;
+    }
   }
 }
 
@@ -72,6 +80,11 @@ nav {
   border: 1px solid #9e9e9e;
 }
 
+@media screen and (max-width: 700px) {
+  .searchbar input {
+    display: none;
+  }
+}
 .searchbar input {
   width: 400px;
   height: 40px;
@@ -83,9 +96,14 @@ input:hover {
   border: 0.5px solid #11366e;
 }
 
-@media screen and(max-width: 720px) {
-  input {
-    display: none;
-  }
+// @media screen and(max-width: 720px) {
+//   input {
+//     display: none;
+//   }
+// }
+
+nav svg {
+  height: 30px;
+  margin: 0px 10px;
 }
 </style>

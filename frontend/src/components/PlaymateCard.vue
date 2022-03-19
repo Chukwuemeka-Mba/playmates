@@ -6,7 +6,14 @@
       </div>
       <div>
         <div class="card-text">
-          <h1>{{ playmate.name }}</h1>
+          <div class="title">
+            <h1>
+              {{ playmate.name }}
+            </h1>
+            <div>
+              <font-awesome-icon :icon="['fas', 'heart-circle-plus']" />
+            </div>
+          </div>
           <p>{{ playmate.description }}</p>
           <p>{{ playmate.age }} years | {{ playmate.rating }} stars</p>
         </div>
@@ -98,6 +105,15 @@ button {
   .card-img {
     height: 295px;
     width: 70%;
+  }
+}
+.title {
+  display: flex;
+  align-items: center;
+  gap: 100%;
+  svg {
+    height: 20px;
+    color: #f65653;
   }
 }
 </style>

@@ -18,7 +18,7 @@
 import PlaymateCard from "../components/PlaymateCard.vue";
 import axios from "axios";
 export default {
-  name: "ArchivesView",
+  name: "TheArchives",
   components: {
     PlaymateCard,
   },
@@ -33,6 +33,7 @@ export default {
   },
   mounted() {
     this.getPlaymates();
+    document.title = "Archives | Playmates";
   },
   methods: {
     getPlaymates() {

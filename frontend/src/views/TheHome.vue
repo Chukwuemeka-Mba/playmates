@@ -2,7 +2,9 @@
   <div class="home">
     <h1>Your dating experiences, <br />all in one place.</h1>
     <section>
-      <router-link to=""> <button>Try playmates for Free</button> </router-link>
+      <router-link to="/signup">
+        <button>Try playmates for Free</button>
+      </router-link>
     </section>
     <section></section>
   </div>
@@ -14,6 +16,12 @@
 export default {
   name: "HomeView",
   components: {},
+  data() {
+    return {};
+  },
+  mounted() {
+    document.title = "Home | Playmates";
+  },
 };
 </script>
 
@@ -24,16 +32,33 @@ export default {
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-image: url("../assets/home.png");
+  background: url("../assets/home.png");
   background-position: center;
-  background-size: 800px;
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-position-y: 20px;
+  background-position-y: 200px;
+  background-blend-mode: darken;
   height: 100vh;
   h1 {
-    margin: 200px 0px;
+    margin: 250px 0px;
     color: #000000;
     font-weight: 700px;
+    font-size: 41px;
+    line-height: 56px;
+    letter-spacing: 1.6px;
+
+    @media screen and(min-width: 700px) {
+      width: 501;
+      height: 155px;
+      top: 125px;
+
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 41px;
+      line-height: 56px;
+      letter-spacing: 1.6px;
+    }
   }
 }
 
