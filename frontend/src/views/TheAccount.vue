@@ -56,10 +56,10 @@
           <p>Are you sure you want to go here?</p>
         </div>
         <div class="text-box danger-btn">
-          <div class="logout">
-            <router-link to="">Log Out</router-link>
-          </div>
           <div class="delete-account">
+            <router-link to="" @click="logout()">Log Out</router-link>
+          </div>
+          <div class="logout">
             <router-link to="">Delete Account</router-link>
           </div>
         </div>
@@ -68,7 +68,26 @@
   </div>
 </template>
 <script>
-export default {};
+import axios from "axios";
+export default {
+  name: "TheAccount",
+
+  data() {},
+  mounted() {
+    document.title = "My account|Playmates";
+  },
+  methods: {
+    logout() {
+      axios.defaults.headers.common["Authorization"] = "";
+
+      localStorage.removeItem("token");
+      localStorage.removeItem("username");
+      localStorage.removeItem("userid");
+      this.$store.commit("removeToken");
+      this.$router.push("/");
+    },
+  },
+};
 </script>
 <style lang="scss">
 //* Mixins

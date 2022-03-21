@@ -4,6 +4,7 @@ import ThePlaymate from "../views/ThePlaymate.vue";
 import TheSignup from "../views/TheSignup.vue";
 import TheLogin from "../views/TheLogin.vue";
 import TheAccount from "../views/TheAccount.vue";
+import store from "@/store/index";
 
 const routes = [
   {
@@ -12,9 +13,21 @@ const routes = [
     component: TheHome,
   },
   {
+    path: "/archives",
+    name: "archives",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/TheArchives.vue"),
+    meta: {
+      requireLogin: true,
+    },
+  },
+  {
     path: "/playmate/:id",
     name: "playmate",
     component: ThePlaymate,
+    meta: {
+      requireLogin: true,
+    },
   },
   {
     path: "/signup",
@@ -30,12 +43,9 @@ const routes = [
     path: "/account",
     name: "account",
     component: TheAccount,
-  },
-  {
-    path: "/archives",
-    name: "archives",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/TheArchives.vue"),
+    meta: {
+      requireLogin: true,
+    },
   },
 ];
 
@@ -43,5 +53,14 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes,
 });
-
+router.beforeEach((to, from, next) => {
+  if (
+    to.matched.some((record) => record.meta.requireLogin) &&
+    !store.state.isAuthenticated
+  ) {
+    next({ name: "TheLogin", query: { to: to.path } });
+  } else {
+    next();
+  }
+});
 export default router;
