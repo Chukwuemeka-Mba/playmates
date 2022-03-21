@@ -10,6 +10,13 @@
       <div class="searchbar">
         <input type="search" name="searchbar" value="looking for something?" />
       </div>
+      <router-link
+        to="/login"
+        class="login"
+        v-if="!$store.state.isAuthenticated"
+      >
+        <h1>Login</h1></router-link
+      >
       <div class="links" v-if="$store.state.isAuthenticated">
         <router-link to="/favorites" class="">Favorites </router-link>
         <router-link to="/archives" class=""> Archives</router-link>
@@ -21,8 +28,27 @@
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   name: "TheNav",
+  data() {
+    return {
+      username: "",
+    };
+  },
+  mounted() {
+    this.getUsername();
+  },
+  methods: {
+    getUsername() {
+      axios
+        .get("http://localhost:8000/playmates-api/users/")
+        .then((response) => {
+          response.data;
+          console.log(response.data);
+        });
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -50,6 +76,7 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    font-size: 14px;
     gap: 10px;
     a:hover {
       text-decoration: underline 1px #ff5a60;
@@ -110,5 +137,13 @@ nav svg {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.login h1 {
+  font-size: 14px;
+  background-color: #ff5a60;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 10px;
 }
 </style>

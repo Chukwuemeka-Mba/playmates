@@ -1,12 +1,14 @@
-from .views import PlayMates
+from .views import PlayMates, Notes
 from django.urls import path, include
 
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register('', PlayMates, basename='playmates')
+router.register('playmates', PlayMates, basename='playmates')
+router.register('notes', Notes, basename='notes')
+
 
 
 urlpatterns = [
-    path('playmates/', include(router.urls))
+    path('', include(router.urls)),
 ]

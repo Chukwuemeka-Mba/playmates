@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Playmate
+from .models import Playmate, Note
 
 
 class PlayMateSerializer(serializers.ModelSerializer):
@@ -9,3 +9,15 @@ class PlayMateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Playmate
         fields = '__all__'
+
+
+class NoteSerializer(serializers.ModelSerializer):
+    playmate = serializers.StringRelatedField()
+
+    class Meta:
+        model = Note
+        fields = ['note', 'playmate']
+class CreateUpdateNoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Note
+        fields = ['note', 'playmate']

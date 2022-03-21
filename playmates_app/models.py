@@ -1,5 +1,4 @@
 from django.db import models
-# from users.models import User
 from django.conf import settings
 # Create your models here.
 
@@ -7,8 +6,7 @@ class Playmate(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=255)
     age = models.IntegerField(default=18)
-    description = models.TextField(default="One night stand, gangbag, both?")
-    slug = models.SlugField()
+    description = models.TextField(default="Hiking, dinner date?")
     play_count = models.IntegerField()
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
     rating = models.IntegerField()
@@ -23,3 +21,11 @@ class Playmate(models.Model):
         if self.image:
             return self.image.url
         return ''
+
+class Note(models.Model):
+    date = models.DateField(auto_now_add=True)
+    note = models.TextField(default="Write a note here")
+    playmate = models.ForeignKey(Playmate, related_name="notes", on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.note
