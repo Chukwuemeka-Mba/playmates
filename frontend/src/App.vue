@@ -1,6 +1,13 @@
 <template>
-  <the-nav></the-nav>
-  <router-view />
+  <div>
+    <the-nav></the-nav>
+  </div>
+
+  <router-view v-slot="{ Component }">
+    <transition name="route" mode="out-in">
+      <component :is="Component"></component>
+    </transition>
+  </router-view>
 </template>
 
 <script>
@@ -41,5 +48,25 @@ body {
   // background-image: url("./assets/datingimg.jpeg");
   background-position: center;
   font-family: "Roboto", sans-serif;
+}
+
+//* Route Transitions
+
+.router-enter-from {
+  opacity: 0;
+  transform: translateX();
+}
+
+.route-enter-active {
+  transition: all 0.1s ease-out;
+}
+
+.route-leave-to {
+  opacity: 0;
+  transform: all 0.1s ease-out;
+}
+
+.route-leave-active {
+  transition: all 0.1s ease-in;
 }
 </style>

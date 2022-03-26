@@ -4,6 +4,8 @@ import ThePlaymate from "../views/ThePlaymate.vue";
 import TheSignup from "../views/TheSignup.vue";
 import TheLogin from "../views/TheLogin.vue";
 import TheAccount from "../views/TheAccount.vue";
+import TheCreate from "../views/TheCreate.vue";
+
 import store from "@/store/index";
 
 const routes = [
@@ -33,6 +35,14 @@ const routes = [
     path: "/signup",
     name: "signup",
     component: TheSignup,
+  },
+  {
+    path: "/create",
+    name: "create",
+    component: TheCreate,
+    meta: {
+      requireLogin: true,
+    },
   },
   {
     path: "/login",

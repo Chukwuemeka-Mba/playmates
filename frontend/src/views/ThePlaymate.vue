@@ -16,6 +16,16 @@
         </div>
         <button type="">Add to Favorites</button>
       </div>
+
+      <div class="noted">
+        <h1>Notes on Notes:</h1>
+        <div class="add-note">
+          <label for="playmate">New Note</label>
+          <input type="text" name="playmate" value="Who's the new mate?" />
+        </div>
+
+        <div class="all-notes"></div>
+      </div>
     </section>
   </div>
 </template>
@@ -99,6 +109,48 @@ section {
   }
   h2 {
     font-size: 15px;
+  }
+}
+
+section {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+
+  form {
+    max-width: 420px;
+    margin: 30px auto;
+    background: white;
+    text-align: left;
+    padding: 40px;
+    border-radius: 10px;
+  }
+  label {
+    color: #aaa;
+    display: inline-block;
+    margin: 25px 0 15px;
+    font-size: 0.6em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  input {
+    display: block;
+    padding: 10px 6px;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+    //*
+  }
+  button {
+    display: block;
+    width: 150px;
+    margin: 30px 0px auto;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
   }
 }
 </style>

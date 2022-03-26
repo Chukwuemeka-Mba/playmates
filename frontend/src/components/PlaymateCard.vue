@@ -10,9 +10,6 @@
             <h1>
               {{ playmate.name }}
             </h1>
-            <div>
-              <font-awesome-icon :icon="['fas', 'heart-circle-plus']" />
-            </div>
           </div>
           <p>{{ playmate.description }}</p>
           <p>{{ playmate.age }} years | {{ playmate.rating }} stars</p>

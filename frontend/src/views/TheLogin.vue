@@ -11,7 +11,7 @@
         </div>
         <div class="data">
           <label for="password">Password</label>
-          <input type="text" name="password" v-model="password" />
+          <input type="password" name="password" v-model="password" />
         </div>
         <div class="data" v-if="errors.length">
           <div v-for="error in errors" :key="error">
@@ -19,8 +19,8 @@
           </div>
         </div>
         <div class="isAuth">
-          <label for="email">Keep me logged in</label>
           <input type="checkbox" name="isAuth" v-model="isAuth" />
+          <label for="email">Keep me logged in</label>
         </div>
         <div class="data">
           <button type="submit" name="email">Login</button>
@@ -42,6 +42,7 @@ export default {
       username: "",
       password: "",
       errors: [],
+      isAuth: false,
     };
   },
   computed: {},

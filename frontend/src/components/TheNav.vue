@@ -8,7 +8,7 @@
         ></router-link>
       </div>
       <div class="searchbar">
-        <input type="search" name="searchbar" value="looking for something?" />
+        <input type="search" name="searchbar" value="looking for someone?" />
       </div>
       <router-link
         to="/login"
@@ -18,10 +18,10 @@
         <h1>Login</h1></router-link
       >
       <div class="links" v-if="$store.state.isAuthenticated">
-        <router-link to="/favorites" class="">Favorites </router-link>
+        <router-link to="/create" class="">New Entry</router-link>
         <router-link to="/archives" class=""> Archives</router-link>
         <router-link to="/account">
-          <p>User: Logged in</p>
+          <p>My Account</p>
         </router-link>
       </div>
     </nav>
